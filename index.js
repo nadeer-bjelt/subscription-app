@@ -17,13 +17,13 @@ mongoose
 
     app.use(express.json());
     app.use(cors());
-    app.use("/auth", authRoutes);
-    app.use("/subs", subsRoutes);
-    // app.use("/articles", articlesRoutes);
-
     app.get("/", (req, res) => {
       res.send("Hello, World!");
     });
+
+    app.use("/auth", authRoutes);
+    app.use("/subs", subsRoutes);
+    // app.use("/articles", articlesRoutes);
 
     app.listen(8080, () => {
       console.log(`Now listening to port 8080`);
